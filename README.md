@@ -1,8 +1,8 @@
 
 # React-Projects
 
-                Made🔥 by [Shashank Chaturvedi]
-                 GitHub: @ShashankChaturvedi07
+                                                                Made🔥 by [Shashank Chaturvedi]
+                                                                 GitHub: @ShashankChaturvedi07
 
 # 📊 Sorting Algorithm Visualizer
 
@@ -12,6 +12,7 @@ A React-based interactive tool to **visualize how sorting algorithms work** step
 ## ✨ Features
 
 ✅ Supports multiple sorting algorithms:
+
 - 🫧 Bubble Sort  (Compare ➝ Swap ➝ Reset)
 - 📐 Selection Sort (Min selection ➝ Swap)  
 - 🔢 Insertion Sort  (Insert ➝ Shift values)
@@ -20,6 +21,7 @@ A React-based interactive tool to **visualize how sorting algorithms work** step
 
 
 ✅ Real-time animations with color-coded steps:
+
 -🔵 Blue	Default/Reset →  After each operation finishes 
 -🟡 Yellow → Comparing When two bars are being checked 
 -🔴 Red  →  Swapping When two bars are actually swapped 
@@ -28,6 +30,7 @@ A React-based interactive tool to **visualize how sorting algorithms work** step
 
 
 ✅ Additional controls:
+
 - User input (comma-separated integers)
 - Random array generation
 - Animation speed control
@@ -35,6 +38,7 @@ A React-based interactive tool to **visualize how sorting algorithms work** step
 - Reset button
 
 🚀Concept-
+
 Two bars are compared → turn yellow.
 If one is greater than the other → turn red and get swapped.
 After the swap → both turn blue again (resting).
