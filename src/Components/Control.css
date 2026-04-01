@@ -1,0 +1,370 @@
+/* ═══════════════════════════════════════════════════
+   CONTROL PANEL — GLASSMORPHISM DESIGN
+   ═══════════════════════════════════════════════════ */
+
+.controls-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 22px 28px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 20px;
+  transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ── Top Row: Input + Action Buttons ── */
+.controls-top-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ── Input ── */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.control-input {
+  width: 260px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  border-radius: 10px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--input-text);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.control-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.control-input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.15);
+}
+
+.control-input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Tooltip */
+.info-icon-wrapper {
+  position: relative;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.info-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.info-icon-wrapper:hover .info-icon {
+  border-color: #6a11cb;
+  color: #6a11cb;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.85);
+}
+
+.info-icon-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ── Gradient Buttons ── */
+.gradient-btn {
+  background: var(--btn-gradient);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.gradient-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--btn-hover-shadow);
+}
+
+.gradient-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.gradient-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.gradient-btn.sort-btn {
+  padding: 10px 32px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.gradient-btn.reset-btn {
+  background: var(--reset-bg);
+  color: var(--reset-text);
+  border: 1px solid var(--reset-border);
+}
+
+.gradient-btn.reset-btn:hover:not(:disabled) {
+  background: var(--reset-bg);
+  border-color: #6a11cb;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.2);
+}
+
+/* ── Algorithm Pill Buttons ── */
+.algo-section {
+  margin-top: 18px;
+}
+
+.algo-section-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.algo-pills {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: var(--pill-text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.pill-btn:hover:not(:disabled):not(.active) {
+  background: rgba(106, 17, 203, 0.12);
+  border-color: rgba(106, 17, 203, 0.3);
+  color: var(--text-primary);
+}
+
+.pill-btn.active {
+  background: var(--btn-gradient);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.35);
+}
+
+.pill-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Speed Control ── */
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.speed-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 180px;
+}
+
+.speed-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.speed-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 160px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--slider-track);
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(106, 17, 203, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.speed-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 3px 12px rgba(106, 17, 203, 0.5);
+}
+
+.speed-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(106, 17, 203, 0.4);
+}
+
+.speed-slider:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.speed-ticks {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+}
+
+.speed-ticks span {
+  font-size: 9px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .controls-card {
+    padding: 16px 16px;
+    border-radius: 12px;
+  }
+
+  .controls-top-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .control-input {
+    width: 100%;
+  }
+
+  .algo-pills {
+    gap: 6px;
+  }
+
+  .pill-btn {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  .gradient-btn {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+
+  .speed-slider {
+    width: 140px;
+  }
+
+  .speed-ticks {
+    width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls-card {
+    padding: 14px 12px;
+  }
+
+  .pill-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .gradient-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .bottom-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

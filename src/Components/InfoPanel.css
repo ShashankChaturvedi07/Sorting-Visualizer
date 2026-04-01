@@ -1,0 +1,210 @@
+/* ═══════════════════════════════════════════════════
+   INFO PANEL — COMPLEXITY + STEP COUNTER
+   ═══════════════════════════════════════════════════ */
+
+.info-panel-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  animation: panelSlideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes panelSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Shared Card ── */
+.info-card {
+  flex: 1;
+  max-width: 340px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--card-shadow);
+  transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: rgba(106, 17, 203, 0.25);
+}
+
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.info-card-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.info-card-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ── Complexity Grid ── */
+.complexity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.complexity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 4px;
+  border-radius: 10px;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+}
+
+.complexity-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.complexity-value {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.complexity-value.best {
+  color: #2ecc71;
+}
+.complexity-value.average {
+  color: #f39c12;
+}
+.complexity-value.worst {
+  color: #e74c3c;
+}
+.complexity-value.space {
+  color: #00b4d8;
+}
+.complexity-value.stable-yes {
+  color: #2ecc71;
+}
+.complexity-value.stable-no {
+  color: #e74c3c;
+}
+
+/* ── Counter Card ── */
+.counters-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.counter-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 85px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+}
+
+.counter-number {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  line-height: 1;
+}
+
+.comparisons-num {
+  color: #f39c12;
+}
+
+.swaps-num {
+  color: #e74c3c;
+}
+
+.counter-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.counter-divider {
+  width: 1px;
+  height: 44px;
+  background: var(--divider);
+  border-radius: 1px;
+}
+
+/* ── Pulse Dot ── */
+.counter-pulse {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  background: #2ecc71;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.8);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════ */
+
+@media (max-width: 680px) {
+  .info-panel-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .info-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .complexity-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .counter-number {
+    font-size: 22px;
+  }
+}

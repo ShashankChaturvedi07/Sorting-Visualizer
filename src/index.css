@@ -1,11 +1,83 @@
-body {
+/* ═══════════════════════════════════════════════════
+   GLOBAL STYLES & CSS CUSTOM PROPERTIES (THEMES)
+   ═══════════════════════════════════════════════════ */
+
+*, *::before, *::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Dark Theme (Default) ── */
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.4);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --input-bg: rgba(255, 255, 255, 0.08);
+  --input-border: rgba(255, 255, 255, 0.18);
+  --input-text: #ffffff;
+  --input-placeholder: rgba(255, 255, 255, 0.35);
+  --btn-gradient: linear-gradient(135deg, #6a11cb, #2575fc);
+  --btn-hover-shadow: 0 6px 25px rgba(106, 17, 203, 0.45);
+  --pill-bg: rgba(255, 255, 255, 0.07);
+  --pill-border: rgba(255, 255, 255, 0.15);
+  --pill-text: rgba(255, 255, 255, 0.75);
+  --slider-track: rgba(255, 255, 255, 0.12);
+  --bar-floor: rgba(255, 255, 255, 0.06);
+  --divider: rgba(255, 255, 255, 0.1);
+  --toggle-bg: rgba(255, 255, 255, 0.1);
+  --toggle-border: rgba(255, 255, 255, 0.2);
+  --reset-bg: rgba(255, 255, 255, 0.08);
+  --reset-border: rgba(255, 255, 255, 0.18);
+  --reset-text: #ffffff;
+}
+
+/* ── Light Theme ── */
+:root.light-mode {
+  --bg-gradient: linear-gradient(135deg, #f0f2f5, #e4e7ec, #f0f2f5);
+  --text-primary: #1e293b;
+  --text-secondary: rgba(30, 41, 59, 0.65);
+  --text-muted: rgba(30, 41, 59, 0.45);
+  --card-bg: rgba(255, 255, 255, 0.82);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --input-bg: rgba(0, 0, 0, 0.05);
+  --input-border: rgba(0, 0, 0, 0.15);
+  --input-text: #1e293b;
+  --input-placeholder: rgba(30, 41, 59, 0.4);
+  --btn-gradient: linear-gradient(135deg, #6a11cb, #2575fc);
+  --btn-hover-shadow: 0 6px 25px rgba(106, 17, 203, 0.25);
+  --pill-bg: rgba(0, 0, 0, 0.05);
+  --pill-border: rgba(0, 0, 0, 0.12);
+  --pill-text: rgba(30, 41, 59, 0.75);
+  --slider-track: rgba(0, 0, 0, 0.12);
+  --bar-floor: rgba(0, 0, 0, 0.06);
+  --divider: rgba(0, 0, 0, 0.1);
+  --toggle-bg: rgba(0, 0, 0, 0.06);
+  --toggle-border: rgba(0, 0, 0, 0.14);
+  --reset-bg: rgba(0, 0, 0, 0.06);
+  --reset-border: rgba(0, 0, 0, 0.15);
+  --reset-text: #1e293b;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;
+  font-family: 'Fira Code', 'Courier New', monospace;
 }
