@@ -2,7 +2,7 @@
 
 # 🔄 Sorting Algorithm Visualizer
 
-[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Visit_Site-6a11cb?style=for-the-badge&logo=vercel&logoColor=white)](https://sorting-visualizer-yourusername.vercel.app)
+[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Visit_Site-6a11cb?style=for-the-badge&logo=vercel&logoColor=white)](https://sorting-visualizer-chi-lemon.vercel.app/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
